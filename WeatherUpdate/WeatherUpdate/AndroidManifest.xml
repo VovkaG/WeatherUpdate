@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" android:compileSdkVersion="32" android:compileSdkVersionCodename="12" package="com.example.weatherupdate" platformBuildVersionCode="32" platformBuildVersionName="12">
+	<uses-sdk android:minSdkVersion="16" android:targetSdkVersion="32" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<application android:theme="resourceId:0x7f10020d" android:label="Weather Update" android:icon="res/drawable/weather_update.png" android:debuggable="true" android:testOnly="true" android:allowBackup="true" android:supportsRtl="true" android:networkSecurityConfig="res/xml/network_security_config.xml" android:roundIcon="res/drawable/weather_update.png" android:appComponentFactory="androidx.core.app.CoreComponentFactory">
+		<activity android:name="com.example.weatherupdate.MainActivity" android:exported="true">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+		<provider android:name="androidx.startup.InitializationProvider" android:exported="false" android:authorities="com.example.weatherupdate.androidx-startup">
+			<meta-data android:name="androidx.emoji2.text.EmojiCompatInitializer" android:value="androidx.startup" />
+			<meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup" />
+		</provider>
+	</application>
+</manifest>
